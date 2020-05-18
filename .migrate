@@ -1,0 +1,21 @@
+{
+  "lastRun": null,
+  "migrations": [
+    {
+      "title": "1589770288887-add-lock.js",
+      "timestamp": null
+    },
+    {
+      "title": "1589784641784-update-lock-add-type-field.js",
+      "timestamp": null
+    },
+    {
+      "title": "1589793382773-update-lock-add-index.js",
+      "timestamp": null
+    },
+    {
+      "title": "1589795890918-update-lock-rename-lock-collection.js",
+      "timestamp": null
+    }
+  ]
+}

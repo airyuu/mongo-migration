@@ -1,0 +1,32 @@
+{
+  "name": "mongo-migration",
+  "version": "1.0.0",
+  "description": "MongoDB migration demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha ./test/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/airyuu/mongo-migration.git"
+  },
+  "keywords": [
+    "mongodb",
+    "migration"
+  ],
+  "author": "Kevin.W",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/airyuu/mongo-migration/issues"
+  },
+  "homepage": "https://github.com/airyuu/mongo-migration#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^7.1.2",
+    "nyc": "^15.0.1"
+  },
+  "dependencies": {
+    "migrate": "^1.6.2",
+    "mongoose": "^5.9.14"
+  }
+}

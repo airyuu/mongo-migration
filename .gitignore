@@ -1,0 +1,13 @@
+*~
+node_modules/
+*.log
+*.out
+*.swp
+*.tgz
+.\#*
+.node-version
+.DS_Store
+/.nyc_output/
+/test-results/
+/coverage.lcov
+coverage/
