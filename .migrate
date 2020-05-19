@@ -2,19 +2,19 @@
   "lastRun": null,
   "migrations": [
     {
-      "title": "1589770288887-add-lock.js",
+      "title": "1589770288887-add-user.js",
       "timestamp": null
     },
     {
-      "title": "1589784641784-update-lock-add-type-field.js",
+      "title": "1589784641784-update-user-add-age.js",
       "timestamp": null
     },
     {
-      "title": "1589793382773-update-lock-add-index.js",
+      "title": "1589793382773-update-user-add-index.js",
       "timestamp": null
     },
     {
-      "title": "1589795890918-update-lock-rename-lock-collection.js",
+      "title": "1589795890918-rename-users-collection.js",
       "timestamp": null
     }
   ]
