@@ -9,7 +9,7 @@ const user = {
 };
 
 module.exports.up = async function () {
-  await UserModel.create(new UserModel(user));
+  await UserModel.create(user);
 }
 
 module.exports.down = async function () {
