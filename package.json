@@ -4,7 +4,12 @@
   "description": "MongoDB migration demo",
   "main": "index.js",
   "scripts": {
-    "test": "mocha ./test/*"
+    "test": "mocha ./test/*",
+    "migrate:init": "migrate init --store='./store.js'",
+    "migrate:list": "migrate list --store='./store.js'",
+    "migrate:create": "migrate create",
+    "migrate:up": "migrate up --store='./store.js'",
+    "migrate:down": "migrate down --store='./store.js'"
   },
   "repository": {
     "type": "git",
