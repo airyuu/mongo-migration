@@ -5,19 +5,21 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha ./test/*",
-    "migrate:init": "migrate init --store='./store.js'",
-    "migrate:list": "migrate list --store='./store.js'",
-    "migrate:create": "migrate create",
-    "migrate:up": "migrate up --store='./store.js'",
-    "migrate:down": "migrate down --store='./store.js'"
+    "migrate:init": "migrate init --store='./lib/store.js'",
+    "migrate:list": "migrate list --store='./lib/store.js'",
+    "migrate:create": "migrate create --template-file ./lib/template.js",
+    "migrate:up": "migrate up --store='./lib/store.js'",
+    "migrate:down": "migrate down --store='./lib/store.js'"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/airyuu/mongo-migration.git"
   },
   "keywords": [
+    "migrate",
+    "migration",
     "mongodb",
-    "migration"
+    "mongoose"
   ],
   "author": "Kevin.W",
   "license": "ISC",
