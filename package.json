@@ -7,7 +7,8 @@
     "test": "mocha ./test/*",
     "migrate:init": "migrate init --store='./lib/store.js'",
     "migrate:list": "migrate list --store='./lib/store.js'",
-    "migrate:create": "migrate create --template-file ./lib/template.js",
+    "migrate:create": "migrate create --template-file ./template/migration.js",
+    "migrate:create:test": "migrate create --migrations-dir ./test --template-file ./template/test.js",
     "migrate:up": "migrate up --store='./lib/store.js'",
     "migrate:down": "migrate down --store='./lib/store.js'"
   },

@@ -1,6 +1,5 @@
 'use strict'
 
-const db = require('../lib/db');
 const { UserModel } = require('../model/users');
 
 const query = {

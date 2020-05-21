@@ -1,6 +1,5 @@
 'use strict'
 
-const db = require('../lib/db');
 const { UserModel, NewUserModel } = require('../model/users');
 
 module.exports.up = async function () {

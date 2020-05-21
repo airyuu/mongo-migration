@@ -1,6 +1,6 @@
 'use strict'
 
-const { init } = require('../lib/db');
+const { init } = require('../lib/mongo');
 
 const database = 'sample-test';
 
@@ -8,11 +8,13 @@ let connection;
 
 before('init database', async () => {
   connection = init({ database });
-  console.log(`Our Current Database Name : ${connection.db.databaseName}`);
 });
 
 after('teardown database', async () => {
   connection.db.dropDatabase();
-  console.log(`${connection.db.databaseName} database dropped.`);
+  console.log(`${connection.name} database dropped.`);
+
+  connection.close();
+  console.log('connection closed');
 });
 
