@@ -23,7 +23,7 @@ Since currently we operate and migrate database by manually, it is very hard for
 
 ## Get Started
 
-1. Clone the repo https://github.com/airyuu/mongo-migration
+1. Clone the repo https://bitbucket.org/kevinwang123/mongo-migration
 2. Install the dependencies
 
 	```
