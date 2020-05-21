@@ -1,8 +1,8 @@
 'use strict'
 
 const { assert } = require('chai');
-const { UserModel } = require('../model/users');
 
+const { UserModel } = require('../model/users');
 const { up, down } = require('../migrations/1589770288887-add-user');
 
 const user = {
@@ -21,7 +21,7 @@ describe('Migrate Up', () => {
     userDoc = await UserModel.findOne(user);
   });
   
-  it('should create a document in database', () => {
+  it('should create a document in users collection', () => {
     assert.exists(userDoc);
     assert.nestedPropertyVal(userDoc, 'firstName', user.firstName);
     assert.nestedPropertyVal(userDoc, 'lastName', user.lastName);
@@ -39,7 +39,7 @@ describe('Migrate Down', () => {
     userDoc = await UserModel.findOne(user);
   });
   
-  it('should remove the created document from database', () => {
+  it('should remove the created document from the users collections', () => {
     assert.isNull(userDoc);
   });
 });

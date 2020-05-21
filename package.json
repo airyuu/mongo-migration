@@ -34,6 +34,7 @@
     "nyc": "^15.0.1"
   },
   "dependencies": {
+    "faker": "^4.1.0",
     "migrate": "^1.6.2",
     "mongoose": "^5.9.14"
   }
