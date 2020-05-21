@@ -14,7 +14,7 @@ Since currently we operate and migrate database by manually, it is very hard for
 4. Easy to roll back
 5. Use unit test code to cover all of the database operations
 
-## Implemented Features(v0.0.1)
+## Implemented Features(v1.0.0)
 
 1. Migrate init/create/list/up/down database operations
 2. Record the operation status of the migration in database
@@ -39,6 +39,36 @@ Since currently we operate and migrate database by manually, it is very hard for
 4. Create migration based on your requirement
 
 	```
-	npm run migrate:up add-name
+	npm run migrate:create file-name
 	```
+	
+5. Up migration
+
+	```
+	npm run migrate:up // migrate up all files
+	npm run migrate:up file-name // migrate up from the specific file
+	```
+	
+6. Down migration
+
+	```
+	npm run migrate:down // migrate down all files
+	npm run migrate:down file-name // migrate down from the specific file
+	```
+	
+7. Test
+
+	```
+	npm test
+	```
+	
+## Schedule
+
+###v2.0.0
+
+1. Create migration and test automatically based on the defined templates
+2. Support migrate multiple data from outside file
+3. Dockerize
+
+
 	
