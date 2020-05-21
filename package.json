@@ -12,6 +12,11 @@
     "migrate:up": "migrate up --store='./lib/store.js'",
     "migrate:down": "migrate down --store='./lib/store.js'"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/airyuu/mongo-migration.git"
@@ -30,6 +35,9 @@
   "homepage": "https://github.com/airyuu/mongo-migration#readme",
   "devDependencies": {
     "chai": "^4.2.0",
+    "eslint": "^7.0.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.4",
     "mocha": "^7.1.2",
     "nyc": "^15.0.1"
   },

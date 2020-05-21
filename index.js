@@ -2,7 +2,6 @@
 
 const migrate = require('migrate');
 
-const db = require('./lib/db');
 const FileStore = require('./lib/store');
 
 migrate.load({
