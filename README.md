@@ -70,10 +70,12 @@ Since currently we operate and migrate database by manually, it is very hard for
 
 1. Create migration and test automatically based on the defined templates
 2. Support environment configuration, e.g. environment name, database names, database credentials, easy to switch environment to operation database
-2. Bind model with migration the same version and timestamp to avoid model big changes
-2. Support migrate data from outside file, actually data should be separated from the codebase
-3. Support migrate data across multiple database
-3. Dockerize
+3. Bind model with migration to keep the same version and timestamp to avoid model big changes
+4. Support migrate data from outside file, actually data should be separated from the codebase
+
+### v3.0.0
+5. Support migrate data across multiple database to support transaction
+6. Dockerize
 
 
 	
