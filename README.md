@@ -1,5 +1,5 @@
 # mongo-migration
-MongoDB migration demo based on mongoose & migrate
+MongoDB migration tool based on mongoose & migrate
 
 ## Reference
 1. [mongoose](https://mongoosejs.com/docs/index.html): MongoDB object modeling framework
@@ -23,14 +23,14 @@ Since currently we operate and migrate database by manually, it is very hard for
 
 ## Get Started
 
-1. Clone the repo https://bitbucket.org/kevinwang123/mongo-migration
+1. Clone the repo https://bitbucket.org/apac_eco_system/mongo-migration
 2. Install the dependencies
 
 	```
 	npm install
 	```
 
-3. Initialize the project, ensure your mongodb server started
+3. Initialize the project, make sure your mongodb server started
 
 	```
 	npm run migrate:init
@@ -41,22 +41,24 @@ Since currently we operate and migrate database by manually, it is very hard for
 	```
 	npm run migrate:create file-name
 	```
+
+5. Write the up & down codebase & test regarding the database operation
 	
-5. Up migration
+6. Up migration
 
 	```
 	npm run migrate:up // migrate up all files
 	npm run migrate:up file-name // migrate up from the specific file
 	```
 	
-6. Down migration
+7. Down migration
 
 	```
 	npm run migrate:down // migrate down all files
 	npm run migrate:down file-name // migrate down from the specific file
 	```
 	
-7. Test
+8. Test
 
 	```
 	npm test
@@ -64,10 +66,13 @@ Since currently we operate and migrate database by manually, it is very hard for
 	
 ## Schedule
 
-###v2.0.0
+### v2.0.0
 
 1. Create migration and test automatically based on the defined templates
-2. Support migrate multiple data from outside file
+2. Support environment configuration, e.g. environment name, database names, database credentials, easy to switch environment to operation database
+2. Bind model with migration the same version and timestamp to avoid model big changes
+2. Support migrate data from outside file, actually data should be separated from the codebase
+3. Support migrate data across multiple database
 3. Dockerize
 
 
