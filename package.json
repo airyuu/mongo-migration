@@ -4,11 +4,10 @@
   "description": "MongoDB migration demo",
   "main": "index.js",
   "scripts": {
-    "test": "mocha ./test/*",
+    "test": "export NODE_ENV=test && ./node_modules/.bin/mocha ./test/*",
     "migrate:init": "migrate init --store='./lib/store.js'",
     "migrate:list": "migrate list --store='./lib/store.js'",
     "migrate:create": "./scripts/generator.sh",
-    "migrate:create:test": "migrate create --migrations-dir ./test --template-file ./template/test.js",
     "migrate:up": "migrate up --store='./lib/store.js'",
     "migrate:down": "migrate down --store='./lib/store.js'"
   },
@@ -34,10 +33,10 @@
     "eslint": "^7.0.0",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.4",
-    "mocha": "^7.1.2",
-    "nyc": "^15.0.1"
+    "mocha": "^7.1.2"
   },
   "dependencies": {
+    "config": "^3.3.1",
     "faker": "^4.1.0",
     "migrate": "^1.6.2",
     "mongoose": "^5.9.14"

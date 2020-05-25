@@ -2,12 +2,10 @@
 
 const { init } = require('../lib/mongo');
 
-const database = 'sample-test';
-
 let connection;
 
 before('init database', async () => {
-  connection = init({ database });
+  connection = init();
 });
 
 after('teardown database', async () => {
