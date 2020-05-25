@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/airyuu/mongo-migration.git"
+    "url": "git+https://bitbucket.org/apac_eco_system/mongo-migration"
   },
   "keywords": [
     "migrate",
@@ -29,10 +29,6 @@
   ],
   "author": "Kevin.W",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/airyuu/mongo-migration/issues"
-  },
-  "homepage": "https://github.com/airyuu/mongo-migration#readme",
   "devDependencies": {
     "chai": "^4.2.0",
     "eslint": "^7.0.0",
