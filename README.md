@@ -74,14 +74,28 @@ Since currently we operate and migrate database by manually, it is very hard for
 6. Write the up & down codebase & tests regarding the database operation
 	
 7. Up migration
+		
+		/** migrate up all files */
+		npm run migrate:up
+		
+		/** 
+		 * migrate up from a specific file
+		 * no need include dirname .e.g 
+		 * npm run migrate:up 1589793382773-update-user-add-index.js
+		 */
+		npm run migrate:up file-name
+			
+8. Down migration(**cautious to invoke the step**)
 
-		npm run migrate:up // migrate up all files
-		npm run migrate:up file-name // migrate up from a specific file
-	
-8. Down migration
-
-		npm run migrate:down // migrate down all files
-		npm run migrate:down file-name // migrate down from a specific file
+		/** migrate down all files */
+		npm run migrate:down
+		
+		/** 
+		 * migrate down from a specific file
+		 * no need include dirname .e.g 
+		 * npm run migrate:down 1589793382773-update-user-add-index.js
+		 */
+		npm run migrate:down file-name
 	
 9. Test
 
@@ -91,6 +105,11 @@ Since currently we operate and migrate database by manually, it is very hard for
 
 		npm run lint
 	
+	
+## Attention
+
+In order to avoid the gap between migration operation and history status, please do not **delete** any migration files and the regarding tests. If you want to only roolback a specific migration and skip some steps, just create a new one to the latest migrations to add operations you want.
+
 	
 ## Plan & Schedule
 
