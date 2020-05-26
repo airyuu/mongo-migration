@@ -67,7 +67,7 @@ Get Started
 	
 	migration looks like below:
 	
-	```shell
+	```js
 	'use strict'
 
 	module.exports.up = async function () {
@@ -81,7 +81,7 @@ Get Started
 	
 	test file looks like below:
 	
-	```shell
+	```js
 	'use strict'
 
 	describe('Migrate Up', () => {
