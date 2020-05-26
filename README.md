@@ -14,13 +14,6 @@ Since currently we operate and migrate database by manually, it is very hard for
 4. Easy to roll back
 5. Use unit test code to cover all of the database operations
 
-## Implemented Features(v1.0.0)
-
-1. Migrate init/create/list/up/down database operations
-2. Record the operation status of the migration in database
-3. Unit test check to cover all of the database migrations
-4. Eslint check
-
 ## Get Started
 
 1. Clone the repo https://bitbucket.org/apac_eco_system/mongo-migration
@@ -36,12 +29,12 @@ Since currently we operate and migrate database by manually, it is very hard for
 	npm run migrate:init
 	```
 	
-4. Make configuration for your mongoDB credentials
+4. Make configuration for environment & mongoDB credentials
 
 	```
 	touch .env
 	```
-	then put your credentials configuration in `.env`
+	Then put your credentials configuration in `.env`
 	
 	```
 	DB_HOST=localhost
@@ -51,6 +44,12 @@ Since currently we operate and migrate database by manually, it is very hard for
 	DB_USER=user
 	DB_PASS=pass
 	```
+	Then set up `NODE_ENV` as you want, such as `local`, `dev`, `stage`, `production`... 
+	
+	```
+	export NODE_ENV=local
+	```
+
 	
 5. Create migration file & test file based on the default templates
 
@@ -115,18 +114,25 @@ Since currently we operate and migrate database by manually, it is very hard for
 	```
 	
 	
-## Schedule
+## Plan & Schedule
+
+### v1.0.0
+
+1. Migrate init/create/list/up/down database operations
+2. Record the operation status of the migration in database
+3. Unit test check to cover all of the database migrations
+4. Eslint check and pre-commit hook
 
 ### v2.0.0
 
-1. Create migration and test automatically based on the defined templates
-2. Support environment configuration, e.g. environment name, database names, database credentials, easy to switch environment to operation database
+1. Create migration and test file automatically based on the default templates
+2. Support environment variables configuration, e.g. environment name, database names, database credentials, easy to switch environment to operation database
 3. Bind model with migration to keep the same version and timestamp to avoid model big changes
 4. Support migrate data from outside file, actually data should be separated from the codebase
 
 ### v3.0.0
 5. Support migrate data across multiple database to support transaction
-6. Dockerize
+
 
 
 	
