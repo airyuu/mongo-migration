@@ -1,11 +1,14 @@
 'use strict'
 
+const config = require('dotenv').config();
 const { init } = require('../lib/mongo');
+
+const { DB_TEST_NAME } = config.parsed;
 
 let connection;
 
 before('init database', async () => {
-  connection = init();
+  connection = init({ database: DB_TEST_NAME });
 });
 
 after('teardown database', async () => {
