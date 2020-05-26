@@ -8,7 +8,7 @@ const { DB_TEST_NAME } = config.parsed;
 let connection;
 
 before('init database', async () => {
-  connection = init({ database: DB_TEST_NAME });
+  connection = init({ dbName: DB_TEST_NAME });
 });
 
 after('teardown database', async () => {

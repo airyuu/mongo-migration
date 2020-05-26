@@ -8,12 +8,13 @@ migrate.load({
   stateStore: new FileStore()
 }, function (err, set) {
   if (err) {
-    throw err
+    throw err;
   }
   set.up(function (err) {
     if (err) {
-      throw err
+      throw err;
     }
-    console.log('migrations successfully ran')
-  })
+    console.log('migrations successfully ran');
+    process.exit(0);
+  });
 });
