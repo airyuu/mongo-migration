@@ -24,7 +24,7 @@ Since currently we operate and migrate database by manually, it is very hard for
 ## Get Started
 
 1. Clone the repo https://bitbucket.org/apac_eco_system/mongo-migration
-2. Install the dependencies
+2. Install dependencies
 
 	```
 	npm install
@@ -36,33 +36,84 @@ Since currently we operate and migrate database by manually, it is very hard for
 	npm run migrate:init
 	```
 	
-4. Create migration based on your requirement
+4. Make configuration for your mongoDB credentials
+
+	```
+	touch .env
+	```
+	then put your credentials configuration in `.env`
+	
+	```
+	DB_HOST=localhost
+	DB_PORT=27017
+	DB_NAME=sample
+	DB_TEST_NAME=sample_test
+	DB_USER=user
+	DB_PASS=pass
+	```
+	
+5. Create migration file & test file based on the default templates
 
 	```
 	npm run migrate:create file-name
 	```
-
-5. Write the up & down codebase & test regarding the database operation
 	
-6. Up migration
+	migration looks like below:
+	
+	```
+	'use strict'
+
+	module.exports.up = async function () {
+	
+	}
+	
+	module.exports.down = async function () {
+	
+	}
+	```
+	
+	test file looks like below:
+	
+	```
+	'use strict'
+
+	describe('Migrate Up', () => {
+	
+	});
+	
+	describe('Migrate Down', () => {
+	
+	});
+	```
+
+6. Write the up & down codebase & tests regarding the database operation
+	
+7. Up migration
 
 	```
 	npm run migrate:up // migrate up all files
-	npm run migrate:up file-name // migrate up from the specific file
+	npm run migrate:up file-name // migrate up from a specific file
 	```
 	
-7. Down migration
+8. Down migration
 
 	```
 	npm run migrate:down // migrate down all files
-	npm run migrate:down file-name // migrate down from the specific file
+	npm run migrate:down file-name // migrate down from a specific file
 	```
 	
-8. Test
+9. Test
 
 	```
 	npm test
 	```
+	
+10. Lint check
+
+	```
+	npm run lint
+	```
+	
 	
 ## Schedule
 

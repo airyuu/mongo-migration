@@ -4,12 +4,13 @@
   "description": "MongoDB migration demo",
   "main": "index.js",
   "scripts": {
-    "test": "export NODE_ENV=test && ./node_modules/.bin/mocha ./test/*",
     "migrate:init": "migrate init --store='./lib/store.js'",
     "migrate:list": "migrate list --store='./lib/store.js'",
     "migrate:create": "./scripts/generator.sh",
     "migrate:up": "migrate up --store='./lib/store.js'",
-    "migrate:down": "migrate down --store='./lib/store.js'"
+    "migrate:down": "migrate down --store='./lib/store.js'",
+    "test": "export NODE_ENV=test && ./node_modules/.bin/mocha ./test/*",
+    "lint": "./node_modules/.bin/eslint --color ./"
   },
   "husky": {
     "hooks": {
