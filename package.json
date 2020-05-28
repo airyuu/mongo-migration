@@ -31,6 +31,7 @@
   "author": "Kevin.W",
   "license": "ISC",
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
     "chai": "^4.2.0",
     "eslint": "^7.0.0",
     "husky": "^4.2.5",
