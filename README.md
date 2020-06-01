@@ -37,6 +37,8 @@ Since currently we operate and migrate database by manually, it is very hard for
 		DB_TEST_NAME=sample_test
 		DB_USER=user
 		DB_PASS=pass
+		BOX_ACCESS_TOKEN=xxxxxxxxxxxxxxxxxxxxxxxx
+		BOX_MIGRATION_FOLDER_ID=xxxxxxxxxxxxxxxxx
 
 	Then set up `NODE_ENV` as you want, such as `local`, `dev`, `stage`, `production`... 
 	
@@ -46,6 +48,12 @@ Since currently we operate and migrate database by manually, it is very hard for
 5. Create migration file & test file based on the default templates
 
 		npm run migrate:create file-name
+		
+		
+	the command will create a migration file in `./migrations` and a regarding test file in `./test` like below:
+	
+		./migrations/1589770288-add-user.js
+		./test/1589770288-add-user.js
 	
 	**migration** looks like below:
 	
@@ -72,8 +80,22 @@ Since currently we operate and migrate database by manually, it is very hard for
 		});
 
 6. Write the up & down codebase & tests regarding the database operation
+
+7. If you have migration data saved in Box, Please make sure your operation meet the below points:
+
+	* Your file name should be same with the file name you create from the 5th step
+	* The file in Box should be a json file like `1589770288887-add-user.json`
+	* the **folder_id** in box should be made configration in **.env**
+
+	If you want to sync updated data from Box to your workplace, just run the below command, if will download the updated files to the folder **./data** in workplace.
+
+		npm run sync
+
+	If you upload something new, it will sync successfully, otherwise it will not sync anything including you update an existing files in Box.
 	
-7. Up migration
+	**EDIT**: We recommend you always create new files in Box instead of update the existing files in Box since we should maintain the same filename in Box and in codebase.
+	
+8. Up migration
 		
 		/** migrate up all files */
 		npm run migrate:up
@@ -85,7 +107,7 @@ Since currently we operate and migrate database by manually, it is very hard for
 		 */
 		npm run migrate:up file-name
 			
-8. Down migration(**cautious to invoke the step**)
+9. Down migration(**cautious to run the step**)
 
 		/** migrate down all files */
 		npm run migrate:down
@@ -97,11 +119,11 @@ Since currently we operate and migrate database by manually, it is very hard for
 		 */
 		npm run migrate:down file-name
 	
-9. Test
+10. Test
 
 		npm test
 	
-10. Lint check
+11. Lint check
 
 		npm run lint
 	
@@ -125,10 +147,10 @@ In order to avoid the gap between migration operation and history status, please
 1. Create migration and test file automatically based on the default templates
 2. Support environment variables configuration, e.g. environment name, database names, database credentials, easy to switch environment to operation database
 3. Bind model with migration to keep the same version and timestamp to avoid model big changes
-4. Support migrate data from outside file, actually data should be separated from the codebase
+4. Support migrate data from outside files, such as Box, actually data should be separated from the codebase
 
 ### v3.0.0
-5. Support migrate data across multiple database to support transaction
+1. Support migrate data across multiple database to support transaction
 
 
 
