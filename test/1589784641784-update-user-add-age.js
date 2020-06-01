@@ -11,7 +11,7 @@ const user = {
   lastName: faker.name.lastName(),
 };
 
-const age = 18;
+const age = require('../data/1589784641784-update-user-add-age');
 
 describe('Migrate Up', () => {
   let userDoc;
@@ -32,7 +32,7 @@ describe('Migrate Up', () => {
     assert.exists(userDoc);
     assert.nestedPropertyVal(userDoc, 'firstName', user.firstName);
     assert.nestedPropertyVal(userDoc, 'lastName', user.lastName);
-    assert.nestedPropertyVal(userDoc, 'age', age);
+    assert.nestedPropertyVal(userDoc, 'age', age.age);
   });
 });
 

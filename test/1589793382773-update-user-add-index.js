@@ -5,7 +5,8 @@ const { assert } = require('chai');
 const { UserModel } = require('../model/users');
 const { up, down } = require('../migrations/1589793382773-update-user-add-index');
 
-const newIndexName = 'firstName_1_lastName_1';
+const index = require('../data/1589793382773-update-user-add-index');
+const newIndexName = Object.keys(index.fields).join('_1_') + '_1';
 
 describe('Migrate Up', () => {
   let userIndices = [];

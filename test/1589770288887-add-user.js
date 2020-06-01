@@ -5,10 +5,7 @@ const { assert } = require('chai');
 const { UserModel } = require('../model/users');
 const { up, down } = require('../migrations/1589770288887-add-user');
 
-const user = {
-  firstName: 'kevin',
-  lastName: 'w'
-};
+const user = require('../data/1589770288887-add-user');
 
 describe('Migrate Up', () => {
   let userDoc;
