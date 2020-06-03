@@ -8,7 +8,7 @@ if [ -z "$filename" ]; then
     exit 1
 fi
 
-now=$(date +%s)
+now=$(date -u +"%Y%m%d%H%M%S")
 
 MIGRATION_TEMPLATE="./template/migration.js"
 MIGRATION_DIR="./migrations"

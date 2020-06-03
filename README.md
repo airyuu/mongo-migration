@@ -20,12 +20,8 @@ Since currently we operate and migrate database by manually, it is very hard for
 2. Install dependencies
 
 		npm install
-
-3. Initialize the project, make sure your mongodb server started
-
-		npm run migrate:init
 	
-4. Make configuration for environment & mongoDB credentials
+3. Make configuration for environment & mongoDB credentials
 
 		touch .env
 
@@ -43,17 +39,22 @@ Since currently we operate and migrate database by manually, it is very hard for
 	Then set up `NODE_ENV` as you want, such as `local`, `dev`, `stage`, `production`... 
 	
 		export NODE_ENV=local
+		
+4. Make sure your mongodb server started
 
 	
-5. Create migration file & test file based on the default templates
+5. Create migration file & test file based on the default templates and UTC time
 
 		npm run migrate:create file-name
 		
 		
 	the command will create a migration file in `./migrations` and a regarding test file in `./test` like below:
 	
-		./migrations/1589770288-add-user.js
-		./test/1589770288-add-user.js
+		./
+			migrations/
+				20200603050909-add-user.js // 20200603050909 is UTC time
+			test/
+				20200603050909-add-user.js
 	
 	**migration** looks like below:
 	
@@ -84,7 +85,7 @@ Since currently we operate and migrate database by manually, it is very hard for
 7. If you have migration data saved in Box, Please make sure your operation meet the below points:
 
 	* Your file name should be same with the file name you create from the 5th step
-	* The file in Box should be a json file like `1589770288887-add-user.json`
+	* The file in Box should be a json file like `20200603050909-add-user.json`
 	* the **folder_id** in box should be made configration in **.env**
 
 	If you want to sync updated data from Box to your workplace, just run the below command, if will download the updated files to the folder **./data** in workplace.
@@ -103,7 +104,7 @@ Since currently we operate and migrate database by manually, it is very hard for
 		/** 
 		 * migrate up from a specific file
 		 * no need include dirname .e.g 
-		 * npm run migrate:up 1589793382773-update-user-add-index.js
+		 * npm run migrate:up 20200603050909-update-user-add-index.js
 		 */
 		npm run migrate:up file-name
 			
@@ -115,7 +116,7 @@ Since currently we operate and migrate database by manually, it is very hard for
 		/** 
 		 * migrate down from a specific file
 		 * no need include dirname .e.g 
-		 * npm run migrate:down 1589793382773-update-user-add-index.js
+		 * npm run migrate:down 20200603050909-update-user-add-index.js
 		 */
 		npm run migrate:down file-name
 	
