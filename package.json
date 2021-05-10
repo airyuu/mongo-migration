@@ -44,7 +44,7 @@
     "faker": "^4.1.0",
     "fs-extra": "^9.0.0",
     "migrate": "^1.6.2",
-    "mongoose": "^5.9.14",
+    "mongoose": "^5.12.7",
     "request": "^2.88.2",
     "request-promise": "^4.2.5"
   }

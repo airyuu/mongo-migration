@@ -133,26 +133,6 @@ Since currently we operate and migrate database by manually, it is very hard for
 
 In order to avoid the gap between migration operation and history status, please do not **delete** any migration files and the regarding tests. If you want to only roolback a specific migration and skip some steps, just create a new one to the latest migrations to add operations you want.
 
-	
-## Plan & Schedule
-
-### v1.0.0
-
-1. Migrate init/create/list/up/down database operations
-2. Record the operation status of the migration in database
-3. Unit test check to cover all of the database migrations
-4. Eslint check and pre-commit hook
-
-### v2.0.0
-
-1. Create migration and test file automatically based on the default templates
-2. Support environment variables configuration, e.g. environment name, database names, database credentials, easy to switch environment to operation database
-3. Bind model with migration to keep the same version and timestamp to avoid model big changes
-4. Support migrate data from outside files, such as Box, actually data should be separated from the codebase
-
-### v3.0.0
-1. Support migrate data across multiple database to support transaction
-
 
 
 	
