@@ -37,7 +37,7 @@
     "eslint": "^7.0.0",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.4",
-    "mocha": "^7.1.2"
+    "mocha": "^10.2.0"
   },
   "dependencies": {
     "dotenv": "^8.2.0",
